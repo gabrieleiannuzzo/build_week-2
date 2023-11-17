@@ -14,7 +14,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/albums.css">
+    <link rel="stylesheet" href="./assets/css/search.css">
 </head>
 
 <body class="text-white overflow-hidden">
@@ -28,7 +28,7 @@
                 </button>
                 <div class="d-flex mb-3">
                     <div id="icons" class="d-flex flex-column align-items-center me-2">
-                        <a href="#" class="mb-2 current-page"><i class="fa-sharp fa-solid fa-house"></i></a>
+                        <a href="./homepage.html" class="mb-2 current-page"><i class="fa-sharp fa-solid fa-house"></i></a>
                         <a href="#" class="mb-2"><i class="fa-solid fa-magnifying-glass"></i></a>
                         <a href="#" class="mb-4"><i class="fa-solid fa-lines-leaning"></i></a>
                         <a href="#" class="mb-2 text-white"><i class="fa-solid fa-square-plus"></i></a>
@@ -37,7 +37,7 @@
                     </div>
                     <nav class="list-unstyled">
                         <li class="mb-2">
-                            <a href="#" class="link-underline link-underline-opacity-0 current-page">Home</a>
+                            <a href="./homepage.html" class="link-underline link-underline-opacity-0 current-page">Home</a>
                         </li>
                         <li class="mb-2">
                             <a href="#" class="link-underline link-underline-opacity-0">Cerca</a>
@@ -157,7 +157,42 @@
             </div>
         </aside>
 
-        <main id="target" class="overflow-y-scroll">
+        <main id="target" class="overflow-y-scroll custom-scroll">
+            <div class="container-fluid">
+                <div class="row mt-4 justify-content-between align-items-baseline">
+                    <div class="col-12 col-md-8 d-flex align-items-baseline">
+                        <div class="arr-nav">
+                            <div class=" d-md-inline-block">
+                                <i class="bi bi-chevron-left"></i>
+                            </div>
+                            <div class=" d-md-inline-block">
+                                <i class="bi bi-chevron-right"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="mb-3 d-md-none">
+                                <h4>Search</h4>
+                            </div>
+                            <div class="input-group mb-3 search-input-pg">
+                                <span class="input-group-text px-4" id="search-icon"><i
+                                        class="fas fa-search"></i></span>
+                                <input id="search-inp" type="text" class="form-control"
+                                    placeholder="Cosa vuoi ascoltare" aria-describedby="search-icon">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3 user-search d-flex align-content-center">
+                        <i class="d-none d-md-block bi-arrow-down text-white me-1"></i><span
+                            class="d-none d-md-block">Install app</span>
+                        <i class="d-none d-md-block bi-bell ms-2"></i>
+                        <i class="d-none d-md-block bi-person"></i>
+                    </div>
+                </div>
+                <div class="row" id="search-row">
+                    <h4 class="mb-4">Browse everything</h4>
+                </div>
+            </div>
         </main>
 
         <aside id="aside-2" class="d-none d-md-block">
@@ -241,12 +276,12 @@
         <div class="container-fluid d-flex align-items-center justify-content-between position-relative"
             id="album-info">
             <div class="justify-content-start align-items-center" id="song-info">
-                <img src="assets/imgs/main/image-1.jpg" alt="album">
+                <img src="" alt="album">
                 <div class="ms-3">
-                    <p class="mb-0" id="footer-song-title">Super fucsiaa aaaaaaaa aaaaaaa aaaaa</p>
-                    <p class="mb-0" id="footer-song-artist">Charles Leclerc</p>
+                    <p class="mb-0" id="footer-song-title">Believer</p>
+                    <p class="mb-0" id="footer-song-artist">Imagine Dragons</p>
                 </div>
-                <i class="fa-regular fa-heart ms-5 like-heart" song-id=""></i>
+                <i class="fa-regular fa-heart ms-5 like-heart" song-id="0pqnGHJpmpxLKifKRmU6WP"></i>
             </div>
 
             <div id="player" previous-song="" next-song="" class="d-flex flex-column align-items-center">
@@ -256,23 +291,16 @@
                         <i class="fa-solid fa-circle position-absolute circle"></i>
                     </div>
                     <i class="fa-solid fa-backward-step"></i>
-                    <div id="play" class="d-flex justify-content-center align-items-center">
-                        <i class="fa-solid fa-play play" id="play-btn"></i>
+                    <div id="play-btn-target">
+                        <div id="play" class="d-flex justify-content-center align-items-center">
+                            <i class="fa-solid fa-play play" id="play-btn"></i>
+                        </div>
                     </div>
                     <i class="fa-solid fa-forward-step"></i>
                     <div class="position-relative circles">
                         <i class="fa-solid fa-repeat underline-icon"></i>
                         <i class="fa-solid fa-circle position-absolute circle"></i>
                     </div>
-                </div>
-                <div id="song" song-id="#" song-duration="200" class="d-flex align-items-center column-gap-3 mt-2">
-                    <p class="mb-0" id="song-status">0:00</p>
-                    <div id="song-time" tabindex="0">
-                        <div class="position-relative" id="song-time-line" style="width: 0px;">
-                            <div id="song-time-toggler" class="position-absolute d-none"></div>
-                        </div>
-                    </div>
-                    <p class="mb-0" id="song-duration"></p>
                 </div>
             </div>
 
@@ -331,6 +359,28 @@
         </div>
     </div>
 
+    <template id="song-template" class="song-template">
+        <div class="track-row">
+        <div class="container-fluid justify-content-between justify-content-md-start d-flex align-items-center py-3 song" song-id="">
+            <div class="px-3">
+                <p class="d-none d-md-inline mb-0 ps-3 text-start div-2-1 song-number number-hover"></p>
+                <i class="fa-solid fa-play d-none ms-3 play-hover"></i>
+            </div>
+            <div class="text-start div-2-2">
+                <h3 class="mb-0 song-title"></h3>
+                <h4 class="mb-0 song-artist"></h4>
+            </div>
+            <p class="d-none d-lg-inline mb-0 text-end div-2-3 song-played"></p>
+            <p class="d-none d-md-inline mb-0 pe-2 text-end div-2-4 song-duration"></p>
+            <div class="d-flex d-md-none flex-column row-gap-1 menu">
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+            </div>
+        </div>
+    </div>
+    </template>
+
     <template id="footer-template">
         <div id="song" song-id="" song-duration="" class="d-flex align-items-center column-gap-3 mt-2">
             <p class="mb-0" id="song-status">0:00</p>
@@ -343,9 +393,16 @@
         </div>
     </template>
 
+    <template id="play-btn-template">
+        <div id="play" class="d-flex justify-content-center align-items-center">
+            <i class="fa-solid fa-play play" id="play-btn"></i>
+        </div>
+    </template>
+
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/funzioni.js"></script>
-    <script src="assets/js/footer.js"></script>
+    <script src="./assets/js/footer.js"></script>
+    <script src="./assets/js/token.js"></script>
+    <script src="./assets/js/search.js"></script>
 </body>
 
 </html>

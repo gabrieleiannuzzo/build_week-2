@@ -14,7 +14,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/albums.css">
+    <link rel="stylesheet" href="./assets/css/homepage.css">
 </head>
 
 <body class="text-white overflow-hidden">
@@ -29,7 +29,7 @@
                 <div class="d-flex mb-3">
                     <div id="icons" class="d-flex flex-column align-items-center me-2">
                         <a href="#" class="mb-2 current-page"><i class="fa-sharp fa-solid fa-house"></i></a>
-                        <a href="#" class="mb-2"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        <a href="./search.html" class="mb-2"><i class="fa-solid fa-magnifying-glass"></i></a>
                         <a href="#" class="mb-4"><i class="fa-solid fa-lines-leaning"></i></a>
                         <a href="#" class="mb-2 text-white"><i class="fa-solid fa-square-plus"></i></a>
                         <a href="#" class="mb-2 text-white"><i class="fa-sharp fa-solid fa-heart"></i></a>
@@ -40,7 +40,7 @@
                             <a href="#" class="link-underline link-underline-opacity-0 current-page">Home</a>
                         </li>
                         <li class="mb-2">
-                            <a href="#" class="link-underline link-underline-opacity-0">Cerca</a>
+                            <a href="./search.html" class="link-underline link-underline-opacity-0">Cerca</a>
                         </li>
                         <li class="mb-4">
                             <a href="#" class="link-underline link-underline-opacity-0">La tua
@@ -157,7 +157,69 @@
             </div>
         </aside>
 
-        <main id="target" class="overflow-y-scroll">
+        <main id="target" class="overflow-y-scroll colore">
+            <div class="containerMain w-100 coloreMain">
+
+
+                <div class="d-none d-lg-block pt-3">
+                    <div class="container d-flex rounded ms-2 me-2 pe-2" id="branoInAscolto">
+
+                        <div class=" pt-3 pb-3">
+                            <img id="img-home-al" src="assets/imgs/main/image-13.jpg" alt=""
+                                class="img-fluid dimensione  rounded ">
+                        </div>
+
+                        <div class=" d-flex flex-wrap row-gap-1 column-gap-1 ">
+                            <p id="nameAlbum" class="col-7  ms-2 mt-2 text center main-brano-p fw-semibold col-6">ALBUM
+                            </p>
+                            <p
+                                class="col-2 mt-2 text-center text-end main-brano-p rounded-pill annunci offset-md-2 bts">
+                                <a href="#" class="text-decoration-none text-secondary">nascondi annunci</a>
+                            </p>
+                            <h2 class="ms-2 col-12 nameArt">VIOLA(feat. Salmo)</h2>
+                            <p class="ms-2 main-brano-p mb-0 col-12 nameArt">Fedez, Salmo</p>
+                            <p class="ms-2 main-brano-p mb-0 col-12">ascolta il nuovo brano di <span
+                                    class=" nameArt"></span></p>
+                            <p class="col-1 ms-2 mt-1 bg-success rounded-pill text-center me-1 bts"><a href="#"
+                                    class="text-dark text-decoration-none">play</a></p>
+                            <p class="col-1 mt-1 text-start rounded-pill text-center border border-secondary ms-1 bts">
+                                <a href="#" class="  text-decoration-none linkColor ">salva</a>
+                            </p>
+                            <p class="col-1 ms-2 mt-1 text-start bts "><a href="#"
+                                    class=" text-decoration-none linkColor">...</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container main-consigliati mt-1 pb-3">
+                    <div class="d-flex justify-content-between">
+                        <h4>Buonasera</h4>
+                        <div class=" d-sm-block d-md-none">
+                            <i class="sizeIcon fa-regular fa-bell p-2"></i>
+                            <i class="sizeIcon fa-regular fa-clock p-2"></i>
+                            <i class="sizeIcon fa-solid fa-gear p-2"></i>
+                        </div>
+                    </div>
+
+                    <div class=" row-gap-3 d-flex  d-lg-none mt-2 mb-2  ">
+                        <p class="miniP me-3 mb-2 rounded-pill btsMobile pe-2 ps-2"> <a href="#"
+                                class="linkColorMobile text-decoration-none">musica</a></p>
+                        <p class="miniP mb-2 rounded-pill btsMobile pe-2 ps-2"><a href="#"
+                                class="linkColorMobile text-decoration-none">podcast e show</a></p>
+                    </div>
+
+                    <div id="firstRowHome" class="d-flex flex-wrap row-gap-2 column-gap-2">
+                    </div>
+
+                    <!--terza section main altri consigliati-->
+                    <div class="d-flex flex-wrap row-gap-2 column-gap-2">
+                        <div class="container-fluid">
+                            <h4 class="a-titolo">Altro di ciò che ti piace</h4>
+                            <div id="secondRowHome" class="a-cards-container justify-content-center">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
 
         <aside id="aside-2" class="d-none d-md-block">
@@ -241,12 +303,12 @@
         <div class="container-fluid d-flex align-items-center justify-content-between position-relative"
             id="album-info">
             <div class="justify-content-start align-items-center" id="song-info">
-                <img src="assets/imgs/main/image-1.jpg" alt="album">
+                <img src="" alt="album">
                 <div class="ms-3">
-                    <p class="mb-0" id="footer-song-title">Super fucsiaa aaaaaaaa aaaaaaa aaaaa</p>
-                    <p class="mb-0" id="footer-song-artist">Charles Leclerc</p>
+                    <p class="mb-0" id="footer-song-title">Believer</p>
+                    <p class="mb-0" id="footer-song-artist">Imagine Dragons</p>
                 </div>
-                <i class="fa-regular fa-heart ms-5 like-heart" song-id=""></i>
+                <i class="fa-regular fa-heart ms-5 like-heart" song-id="0pqnGHJpmpxLKifKRmU6WP"></i>
             </div>
 
             <div id="player" previous-song="" next-song="" class="d-flex flex-column align-items-center">
@@ -256,23 +318,16 @@
                         <i class="fa-solid fa-circle position-absolute circle"></i>
                     </div>
                     <i class="fa-solid fa-backward-step"></i>
-                    <div id="play" class="d-flex justify-content-center align-items-center">
-                        <i class="fa-solid fa-play play" id="play-btn"></i>
+                    <div id="play-btn-target">
+                        <div id="play" class="d-flex justify-content-center align-items-center">
+                            <i class="fa-solid fa-play play" id="play-btn"></i>
+                        </div>
                     </div>
                     <i class="fa-solid fa-forward-step"></i>
                     <div class="position-relative circles">
                         <i class="fa-solid fa-repeat underline-icon"></i>
                         <i class="fa-solid fa-circle position-absolute circle"></i>
                     </div>
-                </div>
-                <div id="song" song-id="#" song-duration="200" class="d-flex align-items-center column-gap-3 mt-2">
-                    <p class="mb-0" id="song-status">0:00</p>
-                    <div id="song-time" tabindex="0">
-                        <div class="position-relative" id="song-time-line" style="width: 0px;">
-                            <div id="song-time-toggler" class="position-absolute d-none"></div>
-                        </div>
-                    </div>
-                    <p class="mb-0" id="song-duration"></p>
                 </div>
             </div>
 
@@ -343,9 +398,16 @@
         </div>
     </template>
 
+    <template id="play-btn-template">
+        <div id="play" class="d-flex justify-content-center align-items-center">
+            <i class="fa-solid fa-play play" id="play-btn"></i>
+        </div>
+    </template>
+
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/funzioni.js"></script>
     <script src="assets/js/footer.js"></script>
+    <script src="assets/js/homepage.js"></script>
 </body>
 
 </html>
